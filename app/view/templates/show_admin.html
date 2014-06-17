@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Gestion Centro</title>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="stylec.css" rel="stylesheet" type="text/css">
+        <script src="bootstrap/js/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="page-header container">
+            <div class="pull-right col-md-2">
+                <h4 class="text-primary"><a href="process.php" id="usr_loged">{user}</a> | <a href="process.php?logout=logout" id="salir">salir </a></h4> 
+            </div>
+            <h1>Gestion Centro</h1> 
+        </div>
+
+
+        <div class="container" style="width: 100%">
+            <div class="col-md-6">
+                <h3><b>&nbsp;Alumnos</b></h3>
+
+                <table class="table table-hover">
+                    <thead class="bg-primary text-primary">
+                        <tr>
+                            <th>DNI</th>
+                            <th>Apellido</th>
+                            <th>Tipo</th>
+                            <th>Opciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {alumno_tr} 
+
+                        <tr>
+                    <form action="/alumne-manager/app/controler/usuario_controler.php" method="POST">
+                        <td>
+                            <input type="text" class="form-control input-sm" name="dni" size="13">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-sm" name="apellido" size="13">
+                        </td>
+                        <td>
+                            <select name="tipo_usuario" >
+                                <option value="0"  >0</option>
+                                <option value="1"  >1</option>
+                            </select>
+                           
+                        </td>
+                        <td><button type="submit" name="action"  value="add_user" type="button" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-plus"></span>&nbsp; <b>Nuevo</b>
+                            </button>
+                        </td>
+                    </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h3><span class="glyphicon glyphicon-home"></span><b>&nbsp;Asignaturas</b></h3>
+
+                <table class="table">
+                    <thead class="bg-primary text-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+
+                            <th>Opciones</th>
+
+                        </tr>
+                    </thead>
+                    <tbody> {asignatura_tr}
+                        <tr>
+                    <form action="/alumne-manager/app/controler/asignatura_controler.php" method="POST">
+                        <td>
+                            <input type="text" class="form-control input-sm" name="identificador" size="13">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-sm" name="nombre" size="13">
+                        </td>
+
+                        <td><button type="submit" name="action"  value="add_asignatura" type="button" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-plus"></span>&nbsp; <b>Nueva</b>
+                            </button>
+                        </td>
+                    </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

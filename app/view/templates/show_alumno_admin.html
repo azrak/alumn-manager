@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {head_data}
+</head>
+
+<body>
+    <div class="page-header container">
+        <div class="pull-right col-md-2">
+            <h4 class="text-primary"><a href="../../process.php" id="usr_loged">{user}</a> | <a href="../../process.php?logout=logout" id="salir">salir </a></h4> 
+        </div>
+        <h2>Alumno {alumno}</h2> 
+    </div>
+
+
+    <div class="container" >
+        
+        <div class="col-md-6">
+            <h3><span class="glyphicon glyphicon-home"></span><b>&nbsp;Asignaturas</b></h3>
+            <table class="table">
+                <thead class="bg-primary text-primary">
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>Nota</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {notas_tr}
+                    
+                    <tr>
+                    <form action="/alumne-manager/app/controler/alumnos_controler.php" method="POST">
+                        <td>
+                            <select name="asignatura">
+                                {asignatura_list}
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control input-sm" name="nota" size="13">
+                        </td>
+                        <input type="hidden" value="{dni}" name="dni" >
+                        <input type="hidden" value="{alumno}" name="alumno" >
+                        
+                        <td><button type="submit" name="action"  value="add_nota_toAlumno" type="button" class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-plus"></span>&nbsp; <b>Nueva</b>
+                            </button>
+                        </td>
+                    </form>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
