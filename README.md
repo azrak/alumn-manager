@@ -1,4 +1,4 @@
 alumn-manager
 =============
 
-alumn-manager
+<strong>Simple alumne manager</strong>
